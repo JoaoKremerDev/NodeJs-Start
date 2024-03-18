@@ -1,0 +1,27 @@
+# Arquivos de dependências
+/node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Arquivos de compilação
+/dist
+/tmp
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de configuração de IDE
+.vscode
+.idea
+
+# Arquivos de cache
+.cache
+
+# Arquivos de build
+/build
+
+# Outros arquivos gerados automaticamente
+.DS_Store
+Thumbs.db
