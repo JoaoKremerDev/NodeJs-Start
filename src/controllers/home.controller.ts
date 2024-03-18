@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Product } from '../models/Product';
 
 export const Home = (req: Request, res: Response) => {
     let showOld: boolean = false;
@@ -7,16 +8,16 @@ export const Home = (req: Request, res: Response) => {
         showOld = true;
     }
 
+    let list = Product.getAll();
+    let expensiveList = Product.getFromPricecAfter(16);
+
     res.render('pages/home', {
         name: 'João',
         age: 25,
         lastname: 'Kremer',
         showOld,
-        products: [
-            {title: 'Produto X', price: 10},
-            {title: 'Produto Y', price: 15},
-            {title: 'Produto Z', price: 20},
-        ],
+        products: list,
+        expensiveList: expensiveList,
         frasesDoDia: []
     });
 };
